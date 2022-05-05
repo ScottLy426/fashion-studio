@@ -1,14 +1,20 @@
 import { useRef } from "react";
 
-import { ThemeProvider } from "styled-components";
 import GlobalStyles from "./styles/GlobalStyles";
 import { dark } from "./styles/Themes";
+
+import { ThemeProvider } from "styled-components";
+
+import ScrollTriggerProxy from "./components/ScrollTriggerProxy";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
-import Home from "./sections/Home";
-import About from "./sections/About";
 import "locomotive-scroll/dist/locomotive-scroll.css";
 import { AnimatePresence } from "framer-motion";
 
+import Home from "./sections/Home";
+import About from "./sections/About";
+import Shop from "./sections/Shop";
+import Banner from "./sections/Banner";
+import NewArrivals from "./sections/NewArrivals";
 function App() {
   const containerRef = useRef(null);
   return (
@@ -29,10 +35,15 @@ function App() {
           }
           containerRef={containerRef}
         >
+          <ScrollTriggerProxy />
           <AnimatePresence>
-            <main class="app" data-scroll-container ref={containerRef}>
+            <main className="app" data-scroll-container ref={containerRef}>
               <Home />
               <About />
+
+              <Shop />
+              <Banner />
+              <NewArrivals />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>

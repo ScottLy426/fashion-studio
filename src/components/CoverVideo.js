@@ -87,20 +87,45 @@ export default function CoverVideo() {
       <DarkOverlay />
       <Title variants={container} initial="hidden" animate="show">
         <div>
-          <motion.h1 variants={item} data-scroll data-scroll-delay="0.13" data-scroll-speed="4">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.13"
+            data-scroll-speed="4"
+          >
             W
           </motion.h1>
-          <motion.h1 variants={item} data-scroll data-scroll-delay="0.09" data-scroll-speed="4">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.09"
+            data-scroll-speed="4"
+          >
             i
           </motion.h1>
-          <motion.h1 variants={item} data-scroll data-scroll-delay="0.06" data-scroll-speed="4">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.06"
+            data-scroll-speed="4"
+          >
             b
           </motion.h1>
-          <motion.h1 variants={item} data-scroll data-scroll-delay="0.04" data-scroll-speed="4">
+          <motion.h1
+            variants={item}
+            data-scroll
+            data-scroll-delay="0.04"
+            data-scroll-speed="4"
+          >
             e
           </motion.h1>
         </div>
-        <motion.h2 variants={item} data-scroll data-scroll-delay="0.04" data-scroll-speed="2">
+        <motion.h2
+          variants={item}
+          data-scroll
+          data-scroll-delay="0.04"
+          data-scroll-speed="2"
+        >
           Inspire. Create. Believe{" "}
         </motion.h2>
       </Title>

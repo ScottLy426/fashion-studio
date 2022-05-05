@@ -2,16 +2,17 @@ import { createGlobalStyle } from "styled-components";
 import "@fontsource/kaushan-script";
 import "@fontsource/sirin-stencil";
 const GlobalStyles = createGlobalStyle`
-  html,body{
-    box-sizing: border-box;
-  }
+
   *,*::before, *::after{
     margin: 0;
     padding:0;
+    box-sizing: border-box;
+
   }
 
   body{
     font-family: "Sirin Stencil";
+    overflow:hidden;
   }
 
   h1,h2,h3,h4,h5,h6{

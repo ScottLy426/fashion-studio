@@ -1,28 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 
-import img1 from '../assets/Images/1.webp'
-import img2 from '../assets/Images/2.webp'
-import img3 from '../assets/Images/3.webp'
-import img4 from '../assets/Images/4.webp'
-import img5 from '../assets/Images/5.webp'
-import img6 from '../assets/Images/6.webp'
-import img7 from '../assets/Images/7.webp'
-import img8 from '../assets/Images/8.webp'
-import img9 from '../assets/Images/9.webp'
-import img10 from '../assets/Images/10.webp'
-import img11 from '../assets/Images/11.webp'
-import img12 from '../assets/Images/12.webp'
-import img13 from '../assets/Images/13.webp'
-import img14 from '../assets/Images/14.webp'
-
+import img1 from "../assets/Images/1.webp";
+import img2 from "../assets/Images/2.webp";
+import img3 from "../assets/Images/3.webp";
 
 const Section = styled.section`
   position: relative;
   min-height: 100vh;
   width: 80vw;
   display: flex;
-  margin: 0 auto; 
+  margin: 0 auto;
 `;
 
 const Title = styled.h1`
@@ -48,19 +36,19 @@ const Left = styled.div`
 const Right = styled.div`
   width: 50%;
   position: relative;
-  
-  img{
+
+  img {
     width: 100%;
     height: auto;
   }
-  .small-img-1{
+  .small-img-1 {
     position: absolute;
     right: 95%;
     bottom: 10%;
     width: 40%;
   }
 
-  .small-img-2{
+  .small-img-2 {
     position: absolute;
     left: 80%;
     bottom: 30%;
@@ -69,7 +57,7 @@ const Right = styled.div`
 `;
 export default function About() {
   return (
-    <Section id="fixed-target" data-scroll-section>
+    <Section id="fixed-target">
       <Title
         data-scroll
         data-scroll-speed="-2"
@@ -94,9 +82,21 @@ export default function About() {
         something that is easy for everyone.
       </Left>
       <Right>
-        <img src={img1} alt='About us'/>
-        <img data-scroll data-scroll-speed="5" src={img2} className="small-img-1" alt='About us'/>
-        <img data-scroll data-scroll-speed="-2" src={img3} className="small-img-2" alt='About us'/>
+        <img src={img1} alt="About us" />
+        <img
+          data-scroll
+          data-scroll-speed="5"
+          src={img2}
+          className="small-img-1"
+          alt="About us"
+        />
+        <img
+          data-scroll
+          data-scroll-speed="-2"
+          src={img3}
+          className="small-img-2"
+          alt="About us"
+        />
       </Right>
     </Section>
   );
