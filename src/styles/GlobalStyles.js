@@ -2,7 +2,9 @@ import { createGlobalStyle } from "styled-components";
 import "@fontsource/kaushan-script";
 import "@fontsource/sirin-stencil";
 const GlobalStyles = createGlobalStyle`
-
+  html,body{
+    box-sizing: border-box;
+  }
   *,*::before, *::after{
     margin: 0;
     padding:0;

@@ -5,8 +5,9 @@ import GlobalStyles from "./styles/GlobalStyles";
 import { dark } from "./styles/Themes";
 import { LocomotiveScrollProvider } from "react-locomotive-scroll";
 import Home from "./sections/Home";
-
+import About from "./sections/About";
 import "locomotive-scroll/dist/locomotive-scroll.css";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const containerRef = useRef(null);
@@ -28,9 +29,12 @@ function App() {
           }
           containerRef={containerRef}
         >
-          <main class="app" ref={containerRef}>
-            <Home />
-          </main>
+          <AnimatePresence>
+            <main class="app" data-scroll-container ref={containerRef}>
+              <Home />
+              <About />
+            </main>
+          </AnimatePresence>
         </LocomotiveScrollProvider>
       </ThemeProvider>
     </>
