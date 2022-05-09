@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-import Logo from "../assets/Svgs/star_white_48dp.svg";
-
 const Container = styled(motion.div)`
   position: absolute;
   top: 0;

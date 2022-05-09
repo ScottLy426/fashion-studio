@@ -134,7 +134,7 @@ function Footer() {
             data-scroll-direction="horizontal"
           >
             Made With &hearts; by
-            <a href="#"> Scott Ly</a>
+            <a href="http://google.com"> Scott Ly</a>
           </span>
         </Bottom>
       </FooterComponent>
