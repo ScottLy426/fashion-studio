@@ -57,7 +57,7 @@ const Right = styled.div`
 `;
 export default function About() {
   return (
-    <Section id="fixed-target">
+    <Section id="fixed-target" className="about">
       <Title
         data-scroll
         data-scroll-speed="-2"

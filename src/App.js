@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import GlobalStyles from "./styles/GlobalStyles";
 import { dark } from "./styles/Themes";
@@ -15,8 +15,19 @@ import About from "./sections/About";
 import Shop from "./sections/Shop";
 import Banner from "./sections/Banner";
 import NewArrivals from "./sections/NewArrivals";
+import Footer from "./sections/Footer";
+import Loader from "./components/Loader";
+
 function App() {
   const containerRef = useRef(null);
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoaded(true);
+    }, 3000);
+  }, []);
   return (
     <>
       <GlobalStyles />
@@ -35,15 +46,17 @@ function App() {
           }
           containerRef={containerRef}
         >
+          <AnimatePresence>{!loaded && <Loader />}</AnimatePresence>
+
           <ScrollTriggerProxy />
           <AnimatePresence>
             <main className="app" data-scroll-container ref={containerRef}>
               <Home />
               <About />
-
               <Shop />
               <Banner />
               <NewArrivals />
+              <Footer />
             </main>
           </AnimatePresence>
         </LocomotiveScrollProvider>

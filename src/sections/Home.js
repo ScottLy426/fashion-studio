@@ -13,7 +13,7 @@ const Section = styled.section`
 
 export default function Home() {
   return (
-    <Section>
+    <Section id="home">
       <CoverVideo />
       <Logo />
       <NavBar />

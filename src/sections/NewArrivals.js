@@ -68,7 +68,7 @@ const Text = styled.div`
 
 const Container = styled.div`
   position: absolute;
-  top: 0%;
+  top: 0;
   left: 50%;
   transform: translate(-50%, 0);
   width: 25vw;
@@ -109,15 +109,19 @@ function NewArrivals() {
   useLayoutEffect(() => {
     let element = ref.current;
     let scrollingElement = ScrollingRef.current;
-    let pinWrapWidth = scrollingElement.offsetWidth;
-
+    let h = gsap.getProperty(scrollingElement.children[0], "offsetHeight");
+    console.log(h);
     let t1 = gsap.timeline();
     setTimeout(() => {
       t1.to(element, {
         scrollTrigger: {
+          anticipatePin: 1,
+
           trigger: element,
           start: "top top",
-          end: `bottom+=100% top-=100%`,
+          end: function (t) {
+            return `+=${t.trigger.scrollHeight} bottom`;
+          },
           scroller: ".app",
           scrub: true,
           pin: true,
@@ -130,14 +134,21 @@ function NewArrivals() {
           y: "0",
         },
         {
-          y: `-100%`,
+          y: (i, t) => {
+            return -t.scrollHeight;
+          },
           scrollTrigger: {
             trigger: scrollingElement,
-            start: "top top",
-            end: "bottom top",
+            start: (t) => {
+              return `top top`;
+            },
+            end: (t) => {
+              return `bottom top`;
+            },
             scroller: ".app",
             scrub: true,
           },
+          ease: "none",
         }
       );
       ScrollTrigger.refresh();
@@ -148,12 +159,12 @@ function NewArrivals() {
     };
   }, []);
   return (
-    <Section ref={ref}>
+    <Section ref={ref} id="new-arrival">
       <Overlay />
       <Title
-        data-scroll
-        data-scroll-speed="-2"
-        data-scroll-direction="horizontal"
+      // data-scroll
+      // data-scroll-speed="-1"
+      // data-scroll-direction="horizontal"
       >
         New Arrivals
       </Title>
